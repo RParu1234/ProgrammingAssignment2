@@ -1,15 +1,30 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Comments that give an overall explanation of the program
 
-## Write a short comment describing this function
-
-makeCacheMatrix <- function(x = matrix()) {
-
-}
+## Programme Assigment 2 - CourseEra - Functions
+## There are two functions expalined here
+## 1. makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse.
+## 2. cacheSolve: This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. If the inverse has already been calculated (and the matrix has not changed), then the cachesolve should retrieve the inverse from the cache.
 
 
-## Write a short comment describing this function
-
-cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+makeCacheMatrix <- function(x= matrix()){
+  # initializing Inverse as NULL
+  
+  inv <- NULL
+  
+  # Function to set Inverse as NULL
+  
+  set <- function(y){
+    
+    x<<-y
+    inv <<- NULL
+  }
+  
+  # Function to get Inverse of the Matrix
+  
+  get <-function()x
+  setInverse <- function(inverse) inv <<- inverse
+  getInverse <- function() inv
+  
+  list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
+  
 }
